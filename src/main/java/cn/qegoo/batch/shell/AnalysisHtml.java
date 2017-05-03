@@ -16,12 +16,10 @@ public class AnalysisHtml {
         String html = "111.206.221.35 - - [20/Apr/2017:00:04:01 +0800] \"GET /saveLog?localUrl=http%3A%2F%2Fwww.qegoo.cn%2Fsearch%3Fpart%3DLB1832V-" +
                 "TRM-E&originUrl=&version=v1&userName=&availWidth=375&availHeight=667 HTTP" +
                 "/1.1\" 301 284 \"http://www.qegoo.cn/search?part=LB1832V-TRM-E\" \"Mozilla/5.0 (iPhone; CPU iPhone OS 9_1 like Mac OS X) AppleWebKit/601.1.46 (KHTML, like Gecko) Version/9.0 Mobile/13B143 Safari/601.1 (compatible; Baiduspider-render/2.0; +http://www.baidu.com/search/spider.html)\"";
-        //        String html = "<h1>max232</h1><span>mfs:3M</span>";
-//        String model = "<h1>{{pn}}</h1><span>mfs:{{mfs}}</span>";
         String model = "{{ip}} - - [{{dataString}}] \"{{method}} {{url}} {{httpversion}}\" {{code}} {{pageLength}} \"{{resourceUrl}}\" \"{{viewer}}\"";
         //解析模板
 
-        Map<String, String> map = _AnalysisHtml.getInfo(html,model);
+        Map<String, String> map = _AnalysisHtml.getInfo(html, model);
         System.out.println(map);
     }
 
@@ -43,9 +41,6 @@ public class AnalysisHtml {
 
     /**
      * 根据model处理html资料
-     * @param html
-     * @param model
-     * @return
      */
     public Map<String, String> getInfo(String html, String model) {
         List<String> modelList = getModelValue(model);

@@ -26,7 +26,7 @@ public class ServerItemWriter implements ItemWriter<NginxLog> {
                 " \"url\", \"httpversion\", \"code\", \"pageLength\", \"viewer\")" +
                 " VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         for (NginxLog item : arg0) {
-            if(item!=null) {
+            if (item != null) {
                 System.out.print("-");
                 int count = jdbcTemplate.update(sql,
                         new Object[]{item.getIp(), item.getDataString(), item.getMethod(), item.getUrl(),

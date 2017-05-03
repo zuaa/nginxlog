@@ -1,13 +1,11 @@
 package cn.qegoo.batch.shell.reader;
 
-import cn.qegoo.batch.shell.AnalysisHtml;
-import cn.qegoo.batch.shell.dto.NginxLog;
-
 import org.springframework.batch.item.file.LineMapper;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
+
+import cn.qegoo.batch.shell.AnalysisHtml;
+import cn.qegoo.batch.shell.dto.NginxLog;
 
 /**
  * 读取任务(数据库任务表，本地文件，供应商文件)
@@ -23,11 +21,11 @@ public class TaskRowMapper implements LineMapper<NginxLog> {
 
         String model = "{{ip}} - - [{{dataString}}] {{method}} {{url}} {{httpversion}} {{code}} {{pageLength}} {{resourceUrl}} {{viewer}}";
 
-        NginxLog log=null;
-         try{
-             AnalysisHtml _AnalysisHtml =new AnalysisHtml();
-            Map<String, String> remap = _AnalysisHtml.getInfo(s,model);
-              log=new NginxLog();
+        NginxLog log = null;
+        try {
+            AnalysisHtml _AnalysisHtml = new AnalysisHtml();
+            Map<String, String> remap = _AnalysisHtml.getInfo(s, model);
+            log = new NginxLog();
             log.setIp(remap.get("ip"));
             log.setDataString(remap.get("dataString"));
             log.setCode(remap.get("code"));
@@ -37,7 +35,7 @@ public class TaskRowMapper implements LineMapper<NginxLog> {
             log.setUrl(remap.get("url"));
             log.setHttpversion(remap.get("httpversion"));
             return log;
-        }catch (Exception e){
+        } catch (Exception e) {
 
         }
 

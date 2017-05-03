@@ -1,7 +1,8 @@
 package cn.qegoo.batch.shell.report;
 
-import cn.qegoo.batch.shell.dto.NginxLog;
 import org.springframework.batch.item.ItemProcessor;
+
+import cn.qegoo.batch.shell.dto.NginxLog;
 
 
 public class CustomItemProcessor implements ItemProcessor<NginxLog, NginxLog> {
