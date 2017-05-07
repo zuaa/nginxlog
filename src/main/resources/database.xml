@@ -11,8 +11,8 @@
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="org.sqlite.JDBC" />
 		<property name="url" value="jdbc:sqlite:${dbfile}" />
-		<property name="username" value="pm" />
-		<property name="password" value="aaaaaaaa" />
+		<property name="username" value="nouse" />
+		<property name="password" value="nouse" />
 	</bean>
 
 	<bean id="transactionManager"

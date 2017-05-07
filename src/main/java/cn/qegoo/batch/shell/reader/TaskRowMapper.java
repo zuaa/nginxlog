@@ -18,7 +18,6 @@ public class TaskRowMapper implements LineMapper<NginxLog> {
     @Override
     public NginxLog mapLine(String s, int i) throws Exception {
 //        System.out.println("这里处理原装数据，处理"+s);
-
         String model = "{{ip}} - - [{{dataString}}] {{method}} {{url}} {{httpversion}} {{code}} {{pageLength}} {{resourceUrl}} {{viewer}}";
 
         NginxLog log = null;
